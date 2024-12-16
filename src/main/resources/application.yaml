@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/schoolDatabase
+    username: postgres
+    password: Likhi@321
+    driver-class-name: org.postgresql.Driver
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    ddl-auto: update  # You can use 'none', 'update', 'create', 'create-drop' based on your needs
+  jpa:
+    hibernate:
+      ddl-auto: update  # Ensure this matches the DDL strategy you need
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true  # Optional: To show SQL queries in the console
+    properties:
+      hibernate:
+        format_sql: true  # Optional: Format the SQL for readability
+  server:
+    port: 8080  # Setting the server port to 8080
