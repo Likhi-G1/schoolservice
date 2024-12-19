@@ -43,6 +43,24 @@ public class SchoolController {
         }
     }
 
+        @DeleteMapping("/deleteStudent/{id}")
+        public ResponseEntity<?> deleteStudent(@PathVariable Long id) {
+            try {
+                String studentServiceUrl = "http://localhost:8081/api/student/delete/" + id;
+
+                restTemplate.delete(studentServiceUrl);
+
+                return ResponseEntity.ok("Student deleted successfully.");
+
+            } catch (Exception e) {
+
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                        .body("Error while deleting student: " + e.getMessage());
+            }
+        }
+
+    }
 
 
-}
+
+
